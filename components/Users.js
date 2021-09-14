@@ -8,19 +8,18 @@ import {getUsers} from "../services/api.service";
 const Users = (props) => {
     console.log(props);
     let {navigation} = props;
-        let [users, setUsers] = useState();
-    useEffect(() => {
+    let [users, setUsers] = useState();
+    useEffect(() =>{
         getUsers().then(value => setUsers([...value]))
     }, []);
-    return (
-        <View style={styles.base}>
-            <FlatList
-                data={users}
-                renderItem={({item}) => <User item={item} nav={navigation}/>}
-                keyExtractor={item => '' + item.id}
-            />
+    return(
+        <View><FlatList
+            data={users}
+            renderItem={({item})=><User item={item} nav={navigation}/>}
+            keyExtractor={item => '' + item.id}
+        />
         </View>
-    )
+    );
 };
 export default Users;
 
