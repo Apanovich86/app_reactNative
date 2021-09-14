@@ -6,17 +6,20 @@ import {NavigationContainer} from "@react-navigation/native";
 import {createStackNavigator} from "@react-navigation/stack";
 import Home from "./components/Home";
 import UserDetails from "./screens/UserDetails";
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import UserPageNavigator from "./screens/UserPageNavigator";
 
 let StackNavigator = createStackNavigator();
+
+let BottomTabNavigator = createBottomTabNavigator();
 
 export default function App() {
     return (
         <NavigationContainer>
-            <StackNavigator.Navigator initialRouteName="Users page">
-                <StackNavigator.Screen name={'Home'} component={Home}/>
-                <StackNavigator.Screen name={'Users page'} component={Users}/>
-                <StackNavigator.Screen name={'uDetails'} component={UserDetails}/>
-            </StackNavigator.Navigator>
+            <BottomTabNavigator.Navigator tabBarOption={{tabStyle:{justifyContent:'center', alignItems:'center'}}}>
+                <BottomTabNavigator.Screen name={'users'} component={UserPageNavigator} options={{ headerShown: false }}/>
+                <BottomTabNavigator.Screen name={'home'} component={Home}/>
+            </BottomTabNavigator.Navigator>
         </NavigationContainer>
     );
 }
