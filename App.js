@@ -10,9 +10,7 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import UserPageNavigator from "./screens/UserPageNavigator";
 
 let StackNavigator = createStackNavigator();
-
 let BottomTabNavigator = createBottomTabNavigator();
-
 export default function App() {
     return (
         <NavigationContainer>
