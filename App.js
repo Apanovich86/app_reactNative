@@ -5,22 +5,22 @@ import Users from "./components/Users";
 import {NavigationContainer} from "@react-navigation/native";
 import {createStackNavigator} from "@react-navigation/stack";
 import Home from "./components/Home";
-import UserDetails from "./components/screens/UserDetails";
-
+import UserDetails from "./screens/UserDetails";
 
 let StackNavigator = createStackNavigator();
+
 export default function App() {
-  return (
-      <NavigationContainer>
-          <StackNavigator.Navigator initialRouteName="Users page">
-              <StackNavigator.Screen name={'Home'} component={Home}/>
-              <StackNavigator.Screen name={'Users page'} component={Users}/>
-              <StackNavigator.Screen name={'uDetails'} component={UserDetails}/>
-          </StackNavigator.Navigator>
-      </NavigationContainer>
-  );
+    return (
+        <NavigationContainer>
+            <StackNavigator.Navigator initialRouteName="Users page">
+                <StackNavigator.Screen name={'Home'} component={Home}/>
+                <StackNavigator.Screen name={'Users page'} component={Users}/>
+                <StackNavigator.Screen name={'uDetails'} component={UserDetails}/>
+            </StackNavigator.Navigator>
+        </NavigationContainer>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {},
+    container: {},
 });
